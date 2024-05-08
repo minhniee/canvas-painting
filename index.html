@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painting by js</title>
+    <style>
+      canvas {
+        border: 1px solid #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Paint Your Own Picture</h1>
+      Set width <input type="text"  onchange="setWidth(this.value)">
+      Set height <input type="text"  onchange="setHeight(this.value)"><br>
+
+      <canvas id="canvas1" onmousedown="startPaint()" onmouseup="endPaint()" onmousemove="doPaint(event.offsetX, event.offsetY)"></canvas>
+    <p>
+        Brush color: <input type="color" value="#000" id="color" onchange="setColor(this.value)">
+        Brush size : <input type="range"  name="" min="1" max="50" value="50" id="sizeInput" oninput="resizeBrush(this.value)">
+       <output id="sizeOutput">50</output>
+    </p>
+    <input type="button" value="clear" id="clear" onclick="clearCanvas()">
+
+    <script src="script.js"></script>
+  </body>
+</html>
